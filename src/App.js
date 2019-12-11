@@ -1,10 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
+
+import Test from './Test';
 import './App.css';
 
 function App() {
+  const word = "Horse";
   return (
+    
     <div className="App">
+      <Test potato={word} />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

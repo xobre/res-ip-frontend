@@ -23,9 +23,7 @@ function Home() {
             <h1>Res I.P.</h1>
             <h2>pronounced /ˈresəˌpē/</h2>
             <form>
-                <label>
-                    <input onChange={(e) => setQuery(e.target.value)} type="text" name="name" placeholder="i.e. Noodles" />
-                </label>
+                <input onChange={(event) => setQuery(event.target.value)} type="text" name="name" placeholder="i.e. Noodles" />
                 <button onClick={handleSubmit}>search</button>
             </form>
         </div>

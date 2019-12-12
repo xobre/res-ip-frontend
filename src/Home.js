@@ -7,7 +7,7 @@ function Home() {
     const [recipes, setRecipes] = useState([]);
 
     const handleSubmit = (event) => {
-        event.preventDefault()
+        event.preventDefault();
         const url = `http://localhost:3001/recipes?food=${query}`;
 
         superagent.get(url)

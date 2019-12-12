@@ -12,9 +12,9 @@ function Home() {
 
         superagent.get(url)
         .then(result => {
-            // const recipesArray = JSON.parse(result);
-            console.log(result);
-            setRecipes(result);
+            const recipesArray = JSON.parse(result.text);
+            console.log(result.text);
+            setRecipes(recipesArray);
         })
     }
 
@@ -26,8 +26,16 @@ function Home() {
                 <input onChange={(event) => setQuery(event.target.value)} type="text" name="name" placeholder="i.e. Noodles" />
                 <button onClick={handleSubmit}>search</button>
             </form>
+            {recipes.map(element => <Recipe recipe={element} />)}
         </div>
     );
 }
 
+function Recipe(props) {
+    return(
+        <div>
+            <p>{props.recipe.title}</p>
+        </div>
+    )
+}
 export default Home;

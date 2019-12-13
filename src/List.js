@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import superagent from "superagent";
+import React, { useState, useEffect } from 'react';
+import superagent from 'superagent';
+import Nav from './Nav';
 
 function List() {
-  const [ingredients, setIngredients] = useState(["a","b","c"]);
+  const [ingredients, setIngredients] = useState([]);
 
   useEffect(() => {
     const url = `http://172.20.200.23:3001/list`;
@@ -29,6 +30,7 @@ function List() {
 
   return(
     <div>
+      <Nav />
       <h1>Shopping List</h1>
       {ingredients.map((ingredient, i) => <Checkbox key={i} ingredient={ingredient} /> )}
     </div>

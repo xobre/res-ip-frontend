@@ -8,12 +8,14 @@ function Home() {
     const [query, setQuery] = useState("");
     const [recipes, setRecipes] = useState([]);
 
+    // provides a method to reset the state variables by setting recipes to an empty array
     const clearRecipes = () => {
         setRecipes([]);
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        // after query has been submitted, clear the query state to an empty string
         setQuery("");
         const url = `http://172.20.200.23:3001/recipes?food=${query}`;
         superagent.get(url)
@@ -27,6 +29,7 @@ function Home() {
 
     return(
         <div>
+            {/* adds the nav bar to this page */}
             <Nav clearRecipes={clearRecipes} />
             <h1>Res IP</h1>
             <h2>pronounced /ˈresəˌpē/</h2>
@@ -43,6 +46,7 @@ function Home() {
 
 function Recipe(props) {
     const handleSave = (event) => {
+        // prefents default behavior of button press (reloading page)
         event.preventDefault();
         const url = `http://172.20.200.23:3001/save`; // database URL
         superagent.post(url)

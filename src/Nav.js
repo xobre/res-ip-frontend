@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// sets up nav bar using bootstrap:
+// https://getbootstrap.com/docs/4.0/components/navbar/
+
+// replaced anchor tags with JSX Link tags
+// added onClick for Links to '/' in order to clear state
 function Nav(props) {
     return(
       <nav className="navbar navbar-expand-lg navbar-light bg-light">

@@ -46,7 +46,7 @@ function Home() {
 
 function Recipe(props) {
     const handleSave = (event) => {
-        // prefents default behavior of button press (reloading page)
+        // prevents default behavior of button press (reloading page)
         event.preventDefault();
         const url = `http://172.20.200.23:3001/save`; // database URL
         superagent.post(url)

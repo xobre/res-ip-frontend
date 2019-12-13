@@ -1,6 +1,7 @@
 // https://reactjs.org/docs/hooks-intro.html
-import React, {useState} from 'react';
-import superagent from "superagent";
+import React, { useState } from 'react';
+import superagent from 'superagent';
+import { Link } from 'react-router-dom';
 
 function Home() {
     const [query, setQuery] = useState("");
@@ -8,7 +9,7 @@ function Home() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const url = `http://localhost:3001/recipes?food=${query}`;
+        const url = `http://172.20.200.23:3001/recipes?food=${query}`;
         superagent.get(url)
         // gets info from the server and parses it into JSON and inserts each object into an array
         .then(result => {
@@ -20,6 +21,8 @@ function Home() {
 
     return(
         <div>
+            <Link to="/">Search</Link>
+            <Link to="/list">Groceries</Link>
             <h1>Res I.P.</h1>
             <h2>pronounced /ˈresəˌpē/</h2>
             <form>
@@ -36,7 +39,7 @@ function Home() {
 function Recipe(props) {
     const handleSave = (event) => {
         event.preventDefault();
-        const url = `http://localhost:3001/save`; // database URL
+        const url = `http://172.20.200.23:3001/save`; // database URL
         superagent.post(url)
         // sending objects created from prop to the server
         .send({title : props.recipe.title, ingredients : props.recipe.ingredients, href : props.recipe.href})

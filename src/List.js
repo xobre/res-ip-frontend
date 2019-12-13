@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import superagent from "superagent";
+import React, { useState, useEffect } from 'react';
+import superagent from 'superagent';
 
 function List() {
-  const [ingredients, setIngredients] = useState(["a","b","c"]);
+  const [ingredients, setIngredients] = useState([]);
 
   useEffect(() => {
     const url = `http://172.20.200.23:3001/list`;

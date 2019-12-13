@@ -2,13 +2,19 @@
 import React, { useState } from 'react';
 import superagent from 'superagent';
 import { Link } from 'react-router-dom';
+import Nav from './Nav';
 
 function Home() {
     const [query, setQuery] = useState("");
     const [recipes, setRecipes] = useState([]);
 
+    const clearRecipes = () => {
+        setRecipes([]);
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault();
+        setQuery("");
         const url = `http://172.20.200.23:3001/recipes?food=${query}`;
         superagent.get(url)
         // gets info from the server and parses it into JSON and inserts each object into an array
@@ -21,13 +27,12 @@ function Home() {
 
     return(
         <div>
-            <Link to="/">Search</Link>
-            <Link to="/list">Groceries</Link>
-            <h1>Res I.P.</h1>
+            <Nav clearRecipes={clearRecipes} />
+            <h1>Res IP</h1>
             <h2>pronounced /ˈresəˌpē/</h2>
             <form>
                 {/* creates a text box and submit button on the same line */}
-                <input onChange={(event) => setQuery(event.target.value)} type="text" name="name" placeholder="i.e. Noodles" />
+                <input onChange={(event) => setQuery(event.target.value)} type="text" name="name" placeholder="i.e. Noodles" value={query} />
                 <button onClick={handleSubmit}>search</button>
             </form>
             {/* maps over array and applys the Recipe component to each object in the array of objects */}

@@ -7,12 +7,8 @@ import List from './List.js';
 function App() {
   return (
     <Router>
-      <div className="App">
-        <header className="App-header">
           <Route exact path="/" component={Home} />          
           <Route exact path="/list" component={List} />
-        </header>
-      </div>
     </Router>
   );
 }

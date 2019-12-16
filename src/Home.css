@@ -1,0 +1,45 @@
+.container {
+  max-width: 50%;
+  min-width: 325px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-top: 25px;
+}
+
+.search-form {
+  width: 325px;
+  min-width: 325px;
+  margin: 25px auto;
+}
+
+.card {
+  margin: 15px auto;
+  padding: 15px;
+  max-width:70%;
+}
+
+h5 {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid grey;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: darkgrey;
+}
+
+.card p {
+  margin-bottom: 5px;
+}
+
+.card .btn {
+  margin: 5px auto 0;
+  width: 70px;
+}

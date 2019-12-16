@@ -1,0 +1,14 @@
+.form-check {
+  max-width: 40%;
+  min-width: 275px;
+  margin: 0 auto;
+}
+
+.capital-case {
+  text-transform: capitalize;
+}
+
+/* https://stackoverflow.com/questions/30975459/add-strikethrough-to-checked-checkbox */
+input[type=checkbox]:checked + label.strikethrough {
+  text-decoration: line-through;
+}

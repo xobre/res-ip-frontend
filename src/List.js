@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import superagent from 'superagent';
 import Nav from './Nav';
+import './List.css';
 
 function List() {
   const [ingredients, setIngredients] = useState([]);
 
   // loads ingredients from DB on page load
   useEffect(() => {
-    const url = `http://172.20.200.23:3001/list`;
+    const url = `https://res-ip.azurewebsites.net/list`;
     superagent.get(url)
     .then(result => {
       const ingredientsArray = JSON.parse(result.text);
@@ -37,9 +38,11 @@ function List() {
   return(
     <div>
       <Nav />
-      <h1>Shopping List</h1>
-      {/* maps over the array of ingredients and lists them as checkboxes */}
-      {ingredients.map((ingredient, i) => <Checkbox key={i} ingredient={ingredient} /> )}
+      <div className="container">
+        <h1 className="text-center">Shopping List</h1>
+        {/* maps over the array of ingredients and lists them as checkboxes */}
+        {ingredients.map((ingredient, i) => <Checkbox index={i} ingredient={ingredient} /> )}
+      </div>
     </div>
   )
 }
@@ -47,10 +50,10 @@ function List() {
 // makes each entry a list item with checkbox
 function Checkbox(props) {
   return(
-    <div>
-      <input type="checkbox" name={`ingredient${props.key}`}/>
-      <label htmlFor={`ingredient${props.key}`}>{props.ingredient}</label>
-    </div>
+      <div key={props.index} className="form-check">
+        <input id={`ingredient${props.index}`} type="checkbox" name={`ingredient${props.index}`} className="form-check-input"/>
+        <label htmlFor={`ingredient${props.index}`} className="capital-case strikethrough">{props.ingredient}</label>
+      </div>
   )
 }
 

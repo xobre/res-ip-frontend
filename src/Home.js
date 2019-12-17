@@ -65,7 +65,7 @@ function Recipe(props) {
         <div className="card">
             {/* opening the link provided by the prop in new tab, using the title as a hyperlink */}
             <h5 className="text-center">
-                <a href={props.recipe.href} target="_blank" rel="noopener noreferrer" class="card-title">{props.recipe.title}</a>
+                <a href={props.recipe.href} target="_blank" rel="noopener noreferrer" className="card-title">{props.recipe.title}</a>
             </h5>
             {/* prints the ingredients on the line below the title */}
             <p>{`Ingredients: ${props.recipe.ingredients}`}</p>

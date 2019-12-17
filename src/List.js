@@ -47,11 +47,11 @@ function List() {
   return(
     <div>
       <Nav />
-      <div className="container">
+      <div className="container text-center">
         <h1 className="text-center">Shopping List</h1>
         {/* maps over the array of ingredients and lists them as checkboxes */}
         {ingredients.map((ingredient, i) => <Checkbox index={i} ingredient={ingredient} /> )}
-        <button onClick={handleDelete} type="button" className="btn btn-danger mb-2">DELETE</button>
+        <button onClick={handleDelete} type="button" className="btn btn-danger">DELETE</button>
       </div>
     </div>
   )

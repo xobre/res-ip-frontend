@@ -7,7 +7,7 @@ function Paste() {
 
   const handleSave = (event) => {
     event.preventDefault();
-    const ingredientsList = getIngredients(event);
+    let ingredientsList = getIngredients(event);
     const url = `https://res-ip.azurewebsites.net/save`;
     superagent.post(url)
       .send({ingredients : ingredientsList.join(', ')})
@@ -25,10 +25,10 @@ function Paste() {
     <div>
       <Nav />
       <div className="container text-center">
-        <p>Copy and paste the ingredients list below. Each line will be a new item on your list. Help us out nerds.</p>
+        <p>Copy and paste the ingredients list below. Each line will be a new item on your groceries list.</p>
         <form onSubmit={handleSave}>
           <textarea />
-          <button type="submit" className="btn">save</button>
+          <button type="submit" className="btn" value="Clear">save</button>
         </form >
       </div>
     </div>

@@ -16,6 +16,7 @@ function Nav(props) {
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
             <Link onClick={props.clearRecipes} className="nav-item nav-link active" to="/">Search</Link>
+            <Link className="nav-item nav-link active" to="/paste">Copy & Paste</Link>
             <Link className="nav-item nav-link active" to="/list">Groceries</Link>
         </div>
       </div>

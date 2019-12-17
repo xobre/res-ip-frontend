@@ -1,0 +1,9 @@
+p {
+  margin-top: 25px;
+}
+
+textarea {
+  width: 100%;
+  height: 250px;
+  border: 1px solid black;
+}

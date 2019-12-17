@@ -57,7 +57,7 @@ function Recipe(props) {
         const url = `https://res-ip.azurewebsites.net/save`; // database URL
         superagent.post(url)
         // sending objects created from prop to the server
-        .send({title : props.recipe.title, ingredients : props.recipe.ingredients, href : props.recipe.href})
+        .send({ingredients : props.recipe.ingredients})
         .end((error, response) => console.log(response));
         // calling the end function ends the request
     }

@@ -38,6 +38,7 @@ function List() {
     for(let i=0; inputElements[i]; ++i){
       if(inputElements[i].checked){
            checkedValues.push(parseInt(inputElements[i].value));
+           inputElements[i].checked = false;
       }
     }
     return checkedValues;

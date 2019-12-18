@@ -12,6 +12,7 @@ function Paste() {
     superagent.post(url)
       .send({ingredients : ingredientsList.join(', ')})
       .end((error, response) => console.log(response));
+    event.target.reset();
 }
 
   const getIngredients = (event) => {
@@ -27,7 +28,7 @@ function Paste() {
       <div className="container text-center">
         <p>Copy and paste the ingredients list below. Each line will be a new item on your groceries list.</p>
         <form onSubmit={handleSave}>
-          <textarea />
+          <textarea id="textarea" />
           <button type="submit" className="btn" value="Clear">save</button>
         </form >
       </div>

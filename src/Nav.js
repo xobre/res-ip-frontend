@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from './resIPlogo1.png';
 
 // sets up nav bar using bootstrap:
 // https://getbootstrap.com/docs/4.0/components/navbar/
@@ -9,7 +10,9 @@ import { Link } from 'react-router-dom';
 function Nav(props) {
     return(
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Link onClick={props.clearRecipes} className="navbar-brand" to="/">Res-IP</Link>
+        <Link onClick={props.clearRecipes} className="navbar-brand" to="/">
+          <img src={logo} alt="" width="50" height="60" />
+        </Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>

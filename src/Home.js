@@ -35,7 +35,6 @@ function Home() {
             <div className="container">
                 <h1 className="text-center">Res IP</h1>
                 <h2 className="text-center">pronounced /ˈresəˌpē/</h2>
-
                 <form className="form-inline search-form">
                     <div className="form-group mx-sm-3 mb-2">
                         {/* creates a text box and submit button on the same line */}

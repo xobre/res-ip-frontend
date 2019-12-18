@@ -14,7 +14,7 @@ function Nav(props) {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div className="navbar-nav">
+          <div className="navbar-nav ml-auto">
             <Link onClick={props.clearRecipes} className="nav-item nav-link active" to="/">Search</Link>
             <Link className="nav-item nav-link active" to="/paste">Copy & Paste</Link>
             <Link className="nav-item nav-link active" to="/list">Groceries</Link>

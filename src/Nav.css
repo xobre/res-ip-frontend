@@ -1,0 +1,7 @@
+.nav-item {
+  font-size: 1.40em;
+}
+
+.nav-item:hover {
+  text-shadow: 1px 1px 1px lightgrey;
+}

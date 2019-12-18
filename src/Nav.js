@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from './resIPlogo1.png';
+import './Nav.css';
 
 // sets up nav bar using bootstrap:
 // https://getbootstrap.com/docs/4.0/components/navbar/

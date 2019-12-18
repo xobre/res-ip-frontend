@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from './resIPlogo1.png';
+import './Nav.css';
 
 // sets up nav bar using bootstrap:
 // https://getbootstrap.com/docs/4.0/components/navbar/
@@ -17,7 +18,7 @@ function Nav(props) {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div className="navbar-nav">
+          <div className="navbar-nav ml-auto">
             <Link onClick={props.clearRecipes} className="nav-item nav-link active" to="/">Search</Link>
             <Link className="nav-item nav-link active" to="/paste">Copy & Paste</Link>
             <Link className="nav-item nav-link active" to="/list">Groceries</Link>
